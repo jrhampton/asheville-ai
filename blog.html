@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Insights &amp; Field Notes — Asheville AI</title>
+  <meta name="description" content="Clear, hype-free analysis on practical artificial intelligence, infrastructure defense, and hands-on operational tech for business owners."/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-secondary-fixed": "#341100",
+            "on-primary-container": "#7b9789",
+            "on-secondary": "#ffffff",
+            "tertiary-fixed": "#aff1c6",
+            "background": "#fcf9f3",
+            "surface-container": "#f0eee8",
+            "on-surface-variant": "#424844",
+            "secondary": "#b84d0a",
+            "surface-container-low": "#f6f3ed",
+            "surface-dim": "#dcdad4",
+            "primary-fixed-dim": "#b0cdbe",
+            "on-tertiary-fixed-variant": "#0a5132",
+            "primary-fixed": "#cce9da",
+            "surface-container-lowest": "#ffffff",
+            "surface": "#fcf9f3",
+            "surface-container-high": "#ebe8e2",
+            "secondary-fixed": "#ffdbcb",
+            "surface-container-highest": "#e5e2dc",
+            "primary-container": "#142e24",
+            "primary": "#001910",
+            "tertiary-container": "#00301b",
+            "secondary-container": "#ff8843",
+            "on-surface": "#1c1c18",
+            "outline": "#727974",
+            "outline-variant": "#c2c8c3"
+          },
+          fontFamily: {
+            "body-md": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-sm": ["Newsreader", "serif"],
+            "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "label-md": ["Plus Jakarta Sans", "sans-serif"],
+            "label-sm": ["Space Mono", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="canonical" href="https://ashevilleai.net/blog.html"/>
+</head>
+<body class="bg-background text-on-surface antialiased font-body-md flex flex-col min-h-screen selection:bg-secondary/20 selection:text-secondary">
+
+  <!-- Top Announcement Bar -->
+  <aside class="bg-primary text-surface-container py-2.5 px-6 border-b border-primary/20 text-center font-label-sm text-xs md:text-sm tracking-wide">
+    <span class="inline-flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+      Security Advisory (October 2026): Active internet-wide automated probing underway. Read our defense checklist below.
+    </span>
+  </aside>
+
+  <!-- Navigation Bar -->
+  <header class="w-full sticky top-0 z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30">
+    <div class="flex items-center justify-between px-6 lg:px-12 py-4 max-w-7xl mx-auto">
+      <div class="flex items-center gap-6">
+        <a class="flex items-center gap-2.5 font-headline-sm text-headline-sm font-semibold tracking-tight text-primary" href="index.html">
+          <span class="w-8 h-8 rounded-lg bg-primary-container text-primary-fixed flex items-center justify-center p-1.5 shadow-sm">
+            <svg class="w-full h-full" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+              <path d="m3 19 6-9 4 5 3-4 5 8H3z"></path>
+              <circle cx="12" cy="7" fill="currentColor" r="1.5"></circle>
+              <path d="M12 8.5v3.5"></path>
+              <circle cx="18" cy="11" fill="currentColor" r="1"></circle>
+              <path d="M16 11h1"></path>
+            </svg>
+          </span>
+          <span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-primary">Asheville AI</span>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 font-label-md text-label-md">
+        <a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-150" href="services.html">Services</a>
+        <a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-150" href="about.html">About &amp; Process</a>
+        <a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-150" href="lab.html">AI Lab</a>
+        <a class="text-secondary font-bold hover:text-secondary transition-colors duration-150" href="blog.html">Blog</a>
+        <a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-150" href="contact.html">Contact &amp; Free Audit</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a class="hidden sm:inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-secondary text-on-secondary font-body-sm text-body-sm font-semibold shadow-sm hover:bg-[#9e4300] transition-all duration-200 active:scale-95" href="contact.html">
+          Get Free AI Assessment
+        </a>
+        <button aria-label="Toggle Menu" class="md:hidden p-2 rounded-lg border border-outline-variant/40 text-primary hover:bg-surface-container" id="mobileMenuBtn" type="button">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div class="hidden md:hidden border-t border-outline-variant/30 bg-surface px-6 py-4 space-y-3" id="mobileMenu">
+      <div class="flex flex-col space-y-2.5 font-label-md text-label-md">
+        <a class="py-1 text-on-surface-variant hover:text-secondary" href="services.html">Services</a>
+        <a class="py-1 text-on-surface-variant hover:text-secondary" href="about.html">About &amp; Process</a>
+        <a class="py-1 text-on-surface-variant hover:text-secondary" href="lab.html">AI Lab</a>
+        <a class="py-1 text-secondary font-bold hover:text-secondary" href="blog.html">Blog</a>
+        <a class="py-1 text-on-surface-variant hover:text-secondary" href="contact.html">Contact &amp; Free Audit</a>
+      </div>
+      <a class="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-secondary text-on-secondary font-body-sm text-body-sm font-semibold shadow-sm" href="contact.html">
+        Get a Free Business AI Readiness Assessment
+      </a>
+    </div>
+  </header>
+
+  <!-- MAIN CANVAS -->
+  <main class="flex-grow">
+    <!-- Hero Header -->
+    <section class="py-16 md:py-20 px-6 lg:px-12 max-w-5xl mx-auto">
+      <div class="space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm text-xs uppercase tracking-wider border border-outline-variant/40">
+          Field Notes &amp; Systems Security
+        </div>
+        <h1 class="text-4xl md:text-5xl font-headline-sm font-semibold text-primary tracking-tight leading-tight">
+          Practical Intelligence, Zero Hand-Waving
+        </h1>
+        <p class="text-lg md:text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+          Tactical guides, direct post-mortems on live web threats, and no-fluff playbooks written for operators who run real infrastructure.
+        </p>
+      </div>
+    </section>
+
+    <!-- Featured Post -->
+    <section class="pb-20 px-6 lg:px-12 max-w-5xl mx-auto">
+      <article class="p-8 md:p-12 rounded-3xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm hover:border-secondary/40 transition-all duration-300">
+        <div class="flex flex-wrap items-center gap-3 text-xs font-label-sm text-on-surface-variant mb-4">
+          <span class="px-2.5 py-1 rounded-full bg-error-container/30 text-error font-semibold uppercase tracking-wider">High Alert</span>
+          <span>•</span>
+          <time datetime="2026-10-25">October 25, 2026</time>
+          <span>•</span>
+          <span>11 min read</span>
+          <span>•</span>
+          <span class="text-primary font-medium">By Jeff Hampton</span>
+        </div>
+
+        <h2 class="text-2xl md:text-3xl font-headline-sm font-semibold text-primary mb-4 leading-snug">
+          <a class="hover:text-secondary transition-colors" href="blog/october-2026-website-security-wave.html">
+            Someone Is Knocking on Every Digital Door You Own Right Now: What the October 2026 Hacking Surge Means for Your Business
+          </a>
+        </h2>
+
+        <p class="text-on-surface-variant text-base md:text-lg leading-relaxed mb-6">
+          If your web server feels like it’s been hit by a quiet, ceaseless rain of strange requests over the last 96 hours, you aren’t paranoid. Security monitors around the globe have clocked tens of thousands of automated probes scanning the public internet every hour. The attackers aren’t manually typing commands into terminal windows; they are running automated scanning swarms weaponized with brand-new zero-day exploits. Here is an unvarnished breakdown of what is hitting production servers right now and the exact defensive moves you must execute before tonight.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded-2xl bg-surface-container-low mb-6 border border-outline-variant/20 font-label-sm text-xs text-on-surface-variant">
+          <div>
+            <span class="font-bold text-primary block text-sm">Target Zero-Day</span>
+            PHP2Shell (CVE-2026-109618 / 19)
+          </div>
+          <div>
+            <span class="font-bold text-primary block text-sm">Exploit Speed</span>
+            Sub-12 hours post-patch
+          </div>
+          <div>
+            <span class="font-bold text-primary block text-sm">Immediate Fix</span>
+            PHP patch + WAF + 2FA keys
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between pt-4 border-t border-outline-variant/20">
+          <a class="inline-flex items-center gap-2 text-secondary font-semibold hover:gap-3 transition-all" href="blog/october-2026-website-security-wave.html">
+            Read Full Practical Defense Guide
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+          <span class="text-xs text-on-surface-variant font-label-sm">WordPress • Next.js • PHP • Cloud VPS</span>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-surface-container-lowest pt-14 pb-12 border-t border-primary-container">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-2">
+        <span class="font-headline-sm font-semibold text-lg text-surface-bright">Asheville AI</span>
+        <span class="text-xs font-label-sm text-primary-fixed-dim">| Practical AI Systems &amp; Lab</span>
+      </div>
+      <div class="flex items-center gap-6 text-sm text-surface-dim">
+        <a class="hover:text-surface-bright transition-colors" href="services.html">Services</a>
+        <a class="hover:text-surface-bright transition-colors" href="lab.html">AI Lab</a>
+        <a class="hover:text-surface-bright transition-colors" href="blog.html">Blog</a>
+        <a class="hover:text-surface-bright transition-colors" href="contact.html">Contact</a>
+        <a class="hover:text-surface-bright transition-colors" href="privacy.html">Privacy</a>
+        <a class="hover:text-surface-bright transition-colors" href="terms.html">Terms</a>
+      </div>
+      <p class="text-xs text-surface-dim font-label-sm">© 2026 Asheville AI. Built in Asheville, NC.</p>
+    </div>
+  </footer>
+
+  <script src="assets/site.js"></script>
+</body>
+</html>

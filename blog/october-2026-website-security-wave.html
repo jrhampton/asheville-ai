@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Someone Is Knocking on Every Digital Door You Own Right Now — Asheville AI</title>
+  <meta name="description" content="A calm, plain-English breakdown of the October 2026 automated hacking wave (PHP2Shell, credential swarms, and supply chain hits) with a concrete, prioritized defensive action plan for website owners."/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-secondary-fixed": "#341100",
+            "on-primary-container": "#7b9789",
+            "on-secondary": "#ffffff",
+            "tertiary-fixed": "#aff1c6",
+            "background": "#fcf9f3",
+            "surface-container": "#f0eee8",
+            "on-surface-variant": "#424844",
+            "secondary": "#b84d0a",
+            "surface-container-low": "#f6f3ed",
+            "surface-dim": "#dcdad4",
+            "primary-fixed-dim": "#b0cdbe",
+            "on-tertiary-fixed-variant": "#0a5132",
+            "primary-fixed": "#cce9da",
+            "surface-container-lowest": "#ffffff",
+            "surface": "#fcf9f3",
+            "surface-container-high": "#ebe8e2",
+            "secondary-fixed": "#ffdbcb",
+            "surface-container-highest": "#e5e2dc",
+            "primary-container": "#142e24",
+            "primary": "#001910",
+            "tertiary-container": "#00301b",
+            "secondary-container": "#ff8843",
+            "on-surface": "#1c1c18",
+            "outline": "#727974",
+            "outline-variant": "#c2c8c3"
+          },
+          fontFamily: {
+            "body-md": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-sm": ["Newsreader", "serif"],
+            "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "label-md": ["Plus Jakarta Sans", "sans-serif"],
+            "label-sm": ["Space Mono", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="canonical" href="https://ashevilleai.net/blog/october-2026-website-security-wave.html"/>
+  <style>
+    .pulse-ring {
+      box-shadow: 0 0 0 0 rgba(184, 77, 10, 0.4);
+      animation: pulse-ring 2s infinite cubic-bezier(0.66, 0, 0, 1);
+    }
+    @keyframes pulse-ring {
+      to {
+        box-shadow: 0 0 0 14px rgba(184, 77, 10, 0);
+      }
+    }
+    .step-badge {
+      font-feature-settings: "tnum";
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased font-body-md flex flex-col min-h-screen selection:bg-secondary/20 selection:text-secondary">
+
+  <!-- Navigation Bar -->
+  <header class="w-full sticky top-0 z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30">
+    <div class="flex items-center justify-between px-6 lg:px-12 py-4 max-w-7xl mx-auto">
+      <div class="flex items-center gap-6">
+        <a class="flex items-center gap-2.5 font-headline-sm text-headline-sm font-semibold tracking-tight text-primary" href="../index.html">
+          <span class="w-8 h-8 rounded-lg bg-primary-container text-primary-fixed flex items-center justify-center p-1.5 shadow-sm">
+            <svg class="w-full h-full" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+              <path d="m3 19 6-9 4 5 3-4 5 8H3z"></path>
+              <circle cx="12" cy="7" fill="currentColor" r="1.5"></circle>
+              <path d="M12 8.5v3.5"></path>
+              <circle cx="18" cy="11" fill="currentColor" r="1"></circle>
+              <path d="M16 11h1"></path>
+            </svg>
+          </span>
+          <span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-primary">Asheville AI</span>
+        </a>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-8 font-label-md text-label-md">
+        <a class="text-on-surface-variant font-medium hover:text-secondary transition-colors" href="../services.html">Services</a>
+        <a class="text-on-surface-variant font-medium hover:text-secondary transition-colors" href="../about.html">About &amp; Process</a>
+        <a class="text-on-surface-variant font-medium hover:text-secondary transition-colors" href="../lab.html">AI Lab</a>
+        <a class="text-secondary font-bold hover:text-secondary transition-colors" href="../blog.html">Blog</a>
+        <a class="text-on-surface-variant font-medium hover:text-secondary transition-colors" href="../contact.html">Contact &amp; Free Audit</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a class="hidden sm:inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-secondary text-on-secondary font-body-sm text-body-sm font-semibold shadow-sm hover:bg-[#9e4300] transition-all" href="../contact.html">
+          Free Security &amp; AI Audit
+        </a>
+        <button aria-label="Toggle Menu" class="md:hidden p-2 rounded-lg border border-outline-variant/40 text-primary hover:bg-surface-container" id="mobileMenuBtn" type="button">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="hidden md:hidden border-t border-outline-variant/30 bg-surface px-6 py-4 space-y-3" id="mobileMenu">
+      <div class="flex flex-col space-y-2.5 font-label-md text-label-md">
+        <a class="py-1 text-on-surface-variant hover:text-secondary" href="../services.html">Services</a>
+        <a class="py-1 text-on-surface-variant hover:text-secondary" href="../about.html">About &amp; Process</a>
+        <a class="py-1 text-on-surface-variant hover:text-secondary" href="../lab.html">AI Lab</a>
+        <a class="py-1 text-secondary font-bold hover:text-secondary" href="../blog.html">Blog</a>
+        <a class="py-1 text-on-surface-variant hover:text-secondary" href="../contact.html">Contact &amp; Free Audit</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ARTICLE CONTENT -->
+  <main class="flex-grow py-12 md:py-20 px-6 lg:px-12">
+    <article class="max-w-3xl mx-auto">
+      
+      <!-- Metadata Header -->
+      <div class="space-y-4 mb-8">
+        <div class="flex items-center gap-2">
+          <a class="text-xs font-label-sm text-secondary hover:underline flex items-center gap-1" href="../blog.html">
+            <span class="material-symbols-outlined text-xs">arrow_back</span>
+            Back to Field Notes
+          </a>
+          <span class="text-xs text-outline-variant">•</span>
+          <span class="text-xs font-label-sm text-on-surface-variant">Systems Security</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-headline-sm font-semibold text-primary tracking-tight leading-[1.15]">
+          Someone Is Knocking on Every Digital Door You Own Right Now: What the October 2026 Hacking Surge Means for Your Business
+        </h1>
+
+        <div class="flex flex-wrap items-center gap-3 pt-2 text-xs font-label-sm text-on-surface-variant border-b border-outline-variant/30 pb-6">
+          <span class="font-medium text-primary">Jeff Hampton</span>
+          <span>•</span>
+          <time datetime="2026-10-25">October 25, 2026</time>
+          <span>•</span>
+          <span>11 min read</span>
+          <span>•</span>
+          <span class="px-2 py-0.5 rounded bg-surface-container border border-outline-variant/40">Verified Threat Telemetry</span>
+        </div>
+      </div>
+
+      <!-- Article Body -->
+      <div class="prose prose-lg text-on-surface-variant leading-relaxed space-y-6">
+
+        <!-- Hook Paragraph -->
+        <p class="text-lg md:text-xl font-normal text-on-surface leading-relaxed">
+          Open your web server access logs right this second, and you will see something unsettling: IP addresses from Frankfurt to Singapore hitting URLs that haven’t existed on your server in five years, guessing paths to configuration files, and throwing malformed memory payloads at every open port on your domain. Nobody is sitting behind a glowing terminal targeting your humble business out of personal spite. What you are witnessing is the exhaust of thousands of automated botnets sweeping the entire IPv4 address space every single morning, looking for unpatched locks they can pick in less than two seconds.
+        </p>
+
+        <p>
+          Over the past week of October 2026, those scans crossed a dangerous threshold. Multiple major zero-day vulnerabilities in foundational web software dropped into public view, and for the first time on a global scale, automated AI coding agents cut the turnaround time between "a flaw is discovered" and "an exploit is hammering every server on earth" from three weeks down to less than twelve hours.
+        </p>
+
+        <p>
+          If you run a website, manage customer databases, or rely on cloud software to keep the lights on, you do not have the luxury of treating cybersecurity as an abstract corporate buzzword. Here is what is actually taking place across the internet right now, stripped of sales jargon, followed by the five concrete defensive steps you can finish before you log off tonight.
+        </p>
+
+        <!-- Threat Diagram / Interactive SVG Graphic -->
+        <div class="my-10 p-6 md:p-8 rounded-3xl bg-surface-container-low border border-outline-variant/40 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-label-sm uppercase tracking-wider text-secondary font-semibold">Visual Threat Breakdown</span>
+            <span class="inline-flex items-center gap-1.5 text-xs font-label-sm text-on-surface-variant">
+              <span class="w-2 h-2 rounded-full bg-secondary pulse-ring"></span>
+              Active Botnet Telemetry
+            </span>
+          </div>
+
+          <!-- SVG Flow Chart -->
+          <div class="w-full overflow-x-auto py-2">
+            <svg class="w-full min-w-[580px] h-auto" viewBox="0 0 680 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Background card areas -->
+              <rect x="10" y="20" width="180" height="180" rx="16" fill="#f0eee8" stroke="#c2c8c3" stroke-dasharray="3 3"/>
+              <rect x="250" y="20" width="180" height="180" rx="16" fill="#142e24" stroke="#7b9789"/>
+              <rect x="490" y="20" width="180" height="180" rx="16" fill="#fcf9f3" stroke="#b84d0a" stroke-width="2"/>
+
+              <!-- Labels: Step 1 -->
+              <text x="25" y="48" font-family="'Space Mono', monospace" font-size="11" fill="#b84d0a" font-weight="bold">01. SCANNING SWARMS</text>
+              <text x="25" y="75" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="600" fill="#1c1c18">Continuous Probe</text>
+              <text x="25" y="98" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#424844">Autonomous scanners crawl</text>
+              <text x="25" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#424844">every public IP on ports 80,</text>
+              <text x="25" y="132" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#424844">443, 8080, and 22 daily.</text>
+              <rect x="25" y="150" width="140" height="28" rx="6" fill="#e5e2dc"/>
+              <text x="35" y="168" font-family="'Space Mono', monospace" font-size="10" fill="#1c1c18">~45k probes / hr</text>
+
+              <!-- Connector 1 -->
+              <path d="M195 110 H245" stroke="#b84d0a" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+              <polygon points="245,110 238,105 238,115" fill="#b84d0a"/>
+
+              <!-- Labels: Step 2 -->
+              <text x="265" y="48" font-family="'Space Mono', monospace" font-size="11" fill="#aff1c6" font-weight="bold">02. WEAPONIZED FLAW</text>
+              <text x="265" y="75" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="600" fill="#ffffff">PHP2Shell &amp; Memory RCE</text>
+              <text x="265" y="98" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#b0cdbe">Flaws (CVE-2026-109618/19)</text>
+              <text x="265" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#b0cdbe">trigger uninitialized RAM</text>
+              <text x="265" y="132" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#b0cdbe">reads to hijack code execution.</text>
+              <rect x="265" y="150" width="140" height="28" rx="6" fill="#00301b"/>
+              <text x="275" y="168" font-family="'Space Mono', monospace" font-size="10" fill="#93d5ac">CVSS 9.2 Critical</text>
+
+              <!-- Connector 2 -->
+              <path d="M435 110 H485" stroke="#b84d0a" stroke-width="2" stroke-dasharray="4 4"/>
+              <polygon points="485,110 478,105 478,115" fill="#b84d0a"/>
+
+              <!-- Labels: Step 3 -->
+              <text x="505" y="48" font-family="'Space Mono', monospace" font-size="11" fill="#b84d0a" font-weight="bold">03. DEFENSIVE SHIELD</text>
+              <text x="505" y="75" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="600" fill="#1c1c18">Hardened Architecture</text>
+              <text x="505" y="98" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#424844">1. Patch PHP runtime</text>
+              <text x="505" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#424844">2. Front with strict WAF</text>
+              <text x="505" y="132" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#424844">3. Rotate &amp; isolate secrets</text>
+              <rect x="505" y="150" width="140" height="28" rx="6" fill="#cce9da"/>
+              <text x="517" y="168" font-family="'Space Mono', monospace" font-size="10" fill="#00301b">Zero Exposure</text>
+            </svg>
+          </div>
+          <p class="text-xs text-on-surface-variant font-label-sm italic text-center">
+            How modern automated attacks unfold: from internet-wide port scans to instantaneous zero-day payload injection.
+          </p>
+        </div>
+
+        <h2 class="text-2xl md:text-3xl font-headline-sm font-semibold text-primary pt-6">
+          The Reality: What Just Broke (In Plain English)
+        </h2>
+
+        <p>
+          Two distinct things occurred in mid-to-late October 2026 that turned regular internet noise into a serious storm.
+        </p>
+
+        <h3 class="text-xl font-headline-sm font-semibold text-primary">1. The "PHP2Shell" Emergency (CVE-2026-109618 &amp; CVE-2026-109619)</h3>
+        <p>
+          PHP powers nearly 75% of the websites you browse, including millions of WordPress installations, custom customer portals, and e-commerce stores. A pair of critical flaws were uncovered in the core engine that runs that PHP code. When a web server runs low on memory or throws a fatal error, PHP tries to clean up its working memory. Due to a deep bug, it occasionally reads from pieces of memory that have already been discarded or left blank. 
+        </p>
+        <p>
+          Crafty attackers figured out that by sending a very specific, slightly damaged web request, they could trick the server into treating that discarded memory as fresh program instructions. That grants them what engineers call Remote Code Execution (RCE)—the ability to run whatever software they want directly on your web host without needing a username or password. The flaw scored a 9.2 out of 10 on the universal severity index.
+        </p>
+
+        <h3 class="text-xl font-headline-sm font-semibold text-primary">2. The 1,900-Account GitHub Hijack &amp; Secrets Harvesting</h3>
+        <p>
+          At the same time, threat groups compromised approximately 1,900 software developer accounts on GitHub. They didn't deface the repositories. Instead, they quietly inserted automated scripts into the build routines that build websites and apps. When those systems compiled, the malicious scripts siphoned off private database passwords, Stripe payment keys, and cloud storage credentials, transmitting them back to rogue command servers.
+        </p>
+
+        <!-- Interactive Comparison Cards -->
+        <div class="my-8 grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div class="p-6 rounded-2xl bg-surface-container-high border border-outline-variant/40 space-y-2">
+            <div class="flex items-center gap-2 text-error font-semibold font-label-sm text-xs uppercase tracking-wide">
+              <span class="material-symbols-outlined text-sm">dangerous</span> The Old Threat Model (2020)
+            </div>
+            <p class="text-sm text-on-surface-variant leading-relaxed">
+              A security flaw was found. A security bulletin was published. Threat actors spent 3 to 4 weeks studying the code before building an exploit. You had roughly a month to notice, test, and patch your servers.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-primary-container text-surface-container-lowest space-y-2 border border-primary">
+            <div class="flex items-center gap-2 text-tertiary-fixed font-semibold font-label-sm text-xs uppercase tracking-wide">
+              <span class="material-symbols-outlined text-sm">bolt</span> The New Reality (October 2026)
+            </div>
+            <p class="text-sm text-surface-container leading-relaxed">
+              Flaws are diff-checked by AI tools within 40 minutes of a patch release. Working exploits are generated in hours. Global botnets begin weaponized spraying across every known web server before most IT teams have finished their morning coffee.
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-2xl md:text-3xl font-headline-sm font-semibold text-primary pt-6">
+          Your 5-Step Action Checklist (Do These Today)
+        </h2>
+
+        <p>
+          You do not need an enterprise budget or a ten-person DevOps team to defend your business. You just need to follow a calm, methodical sequence. Here are the five exact steps you or your web provider must verify right now:
+        </p>
+
+        <!-- Step 1 -->
+        <div class="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-sm step-badge">1</span>
+            <h3 class="text-lg md:text-xl font-headline-sm font-semibold text-primary m-0">Patch Your PHP Runtime to the Patched Releases</h3>
+          </div>
+          <p class="text-sm md:text-base text-on-surface-variant leading-relaxed pl-11">
+            If your site runs on WordPress, Laravel, Drupal, or standard shared hosting (cPanel, WP Engine, Kinsta, Namecheap hosting, SiteGround, or a custom VPS), verify your active PHP version immediately. You must be on one of these clean releases:
+          </p>
+          <div class="pl-11">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 font-label-sm text-xs">
+              <span class="p-2 rounded bg-surface-container text-primary font-bold text-center border border-outline-variant/30">PHP 8.2.35+</span>
+              <span class="p-2 rounded bg-surface-container text-primary font-bold text-center border border-outline-variant/30">PHP 8.3.36+</span>
+              <span class="p-2 rounded bg-surface-container text-primary font-bold text-center border border-outline-variant/30">PHP 8.4.27+</span>
+              <span class="p-2 rounded bg-surface-container text-primary font-bold text-center border border-outline-variant/30">PHP 8.5.12+</span>
+            </div>
+          </div>
+          <p class="text-xs text-on-surface-variant pl-11 italic">
+            *Warning: If your hosting account is stuck on legacy PHP 7.4 or 8.1, you have zero vendor patches available. Upgrade to 8.2+ or put a strict Web Application Firewall in front of the server today.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-sm step-badge">2</span>
+            <h3 class="text-lg md:text-xl font-headline-sm font-semibold text-primary m-0">Place Cloudflare (or a Managed WAF) in Front of Your Origin IP</h3>
+          </div>
+          <p class="text-sm md:text-base text-on-surface-variant leading-relaxed pl-11">
+            Never expose your actual web server’s raw IP address to the open web. Placing Cloudflare’s free or pro proxy layer in front blocks automated malformed memory requests before they ever reach your web server. Cloudflare already deploys managed rules that instantly identify and discard the specific memory-corruption sequences used by PHP2Shell botnets.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-sm step-badge">3</span>
+            <h3 class="text-lg md:text-xl font-headline-sm font-semibold text-primary m-0">Turn on Hardware-Key or App-Based 2FA on Every Registrar &amp; Cloud Account</h3>
+          </div>
+          <p class="text-sm md:text-base text-on-surface-variant leading-relaxed pl-11">
+            SMS verification codes are no longer sufficient against automated session hijackers. Log into Namecheap, GoDaddy, Google Workspace, AWS, and your web host. Disable SMS authentication and switch to an authenticator app (Google Authenticator, 1Password, or YubiKey). If an attacker breaches an employee laptop, hardware or time-based 2FA prevents them from touching your DNS records or transferring your domain.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-sm step-badge">4</span>
+            <h3 class="text-lg md:text-xl font-headline-sm font-semibold text-primary m-0">Prune Forgotten Plugins, Staging Sites, and Old Databases</h3>
+          </div>
+          <p class="text-sm md:text-base text-on-surface-variant leading-relaxed pl-11">
+            Over 60% of small business compromises happen on test subdomains like <code>staging.yourbusiness.com</code> or <code>old.yourbusiness.com</code> that haven’t been updated in three years. If you aren’t using a subdomain, delete the DNS record and wipe the directory. Delete any inactive WordPress plugins instead of merely "deactivating" them—dormant PHP files can still be triggered directly by URL scanners.
+          </p>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/40 shadow-sm space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-sm step-badge">5</span>
+            <h3 class="text-lg md:text-xl font-headline-sm font-semibold text-primary m-0">Audit Your API Keys and Database Passwords</h3>
+          </div>
+          <p class="text-sm md:text-base text-on-surface-variant leading-relaxed pl-11">
+            With the recent exposure incidents at developer platforms and GitHub accounts, assume any secret key written in plaintext on a development laptop might be compromised. Rotate your database passwords, Stripe webhooks, and OpenAI / Anthropic API keys. Set up usage limits on cloud accounts so an unauthorized API key cannot rack up tens of thousands of dollars in automated charges overnight.
+          </p>
+        </div>
+
+        <!-- How Asheville AI Approaches This -->
+        <div class="my-10 p-8 rounded-3xl bg-primary text-surface-container-lowest space-y-4">
+          <h3 class="text-2xl font-headline-sm font-semibold text-surface-bright">
+            Why We Build on Static and Isolated Architectures
+          </h3>
+          <p class="text-sm md:text-base text-primary-fixed leading-relaxed">
+            When we build web platforms and AI automation systems at Asheville AI, our first rule is radical simplicity. Notice how this website is hosted: pure static, pre-rendered markup served via globally distributed, immutable CDN edge servers with no unpatched database listeners and no dynamic PHP interpreters exposed to the open internet. 
+          </p>
+          <p class="text-sm md:text-base text-primary-fixed leading-relaxed">
+            When our clients do require heavy databases or internal AI tools, we run them behind zero-trust tunnels where no public IP address exists to be scanned. That isn’t complicated wizardry; it is simply disciplined engineering.
+          </p>
+          <div class="pt-2">
+            <a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-secondary text-on-secondary font-semibold text-sm hover:bg-[#9e4300] transition-colors" href="../contact.html">
+              Have Us Audit Your Web &amp; AI Security Setup
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Summary & Sign-off -->
+        <h2 class="text-2xl md:text-3xl font-headline-sm font-semibold text-primary pt-4">
+          Don’t Panic. Just Check Your Locks.
+        </h2>
+        <p>
+          The internet isn't ending, and your company isn't doomed. But the era of launching a website on a budget server and ignoring it for three years without routine maintenance is officially over. Take sixty minutes today to verify your runtime versions, turn on your firewalls, and lock your doors.
+        </p>
+        <p class="font-medium text-primary">
+          — Jeff Hampton, Founder of Asheville AI
+        </p>
+
+      </div>
+
+      <!-- Author Bio Card -->
+      <div class="mt-12 p-6 rounded-2xl bg-surface-container border border-outline-variant/40 flex flex-col sm:flex-row gap-5 items-center sm:items-start">
+        <div class="w-16 h-16 rounded-full bg-primary text-primary-fixed flex items-center justify-center font-headline-sm text-2xl font-semibold flex-shrink-0">
+          JH
+        </div>
+        <div class="space-y-1 text-center sm:text-left">
+          <div class="font-headline-sm font-semibold text-lg text-primary">About the Author</div>
+          <p class="text-xs md:text-sm text-on-surface-variant leading-relaxed">
+            Jeff Hampton is the founder of Asheville AI, creator of Voicemagic.dev, and author of <em>ChatGPT on ChatGPT: The AI Explains Itself</em> (published in December 2022 as the world’s first book written entirely by ChatGPT). He builds practical, secure software systems for businesses across Western North Carolina.
+          </p>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-surface-container-lowest pt-14 pb-12 border-t border-primary-container">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-2">
+        <span class="font-headline-sm font-semibold text-lg text-surface-bright">Asheville AI</span>
+        <span class="text-xs font-label-sm text-primary-fixed-dim">| Practical AI Systems &amp; Lab</span>
+      </div>
+      <div class="flex items-center gap-6 text-sm text-surface-dim">
+        <a class="hover:text-surface-bright transition-colors" href="../services.html">Services</a>
+        <a class="hover:text-surface-bright transition-colors" href="../lab.html">AI Lab</a>
+        <a class="hover:text-surface-bright transition-colors" href="../blog.html">Blog</a>
+        <a class="hover:text-surface-bright transition-colors" href="../contact.html">Contact</a>
+        <a class="hover:text-surface-bright transition-colors" href="../privacy.html">Privacy</a>
+        <a class="hover:text-surface-bright transition-colors" href="../terms.html">Terms</a>
+      </div>
+      <p class="text-xs text-surface-dim font-label-sm">© 2026 Asheville AI. Built in Asheville, NC.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/site.js"></script>
+</body>
+</html>
