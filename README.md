@@ -1,6 +1,6 @@
 # Asheville AI — Practical AI for Small Businesses & Active R&D Lab
 
-Official website for **Asheville AI** (Asheville, North Carolina). We help Western North Carolina small businesses implement high-ROI AI systems, 24/7 voice receptionists, and workflow automation—backed by an active in-house AI product lab.
+Official website for **Asheville AI** ([https://ashevilleai.net](https://ashevilleai.net) — Asheville, North Carolina). We help Western North Carolina small businesses implement high-ROI AI systems, 24/7 voice receptionists, and workflow automation—backed by an active in-house AI product lab.
 
 ## Pages
 - **[Home (`index.html`)](index.html)** — Hero, Active Client Hub preview, Core Services, Free Business AI Readiness Assessment form, 3-Step Methodology, and In-House AI Lab showcase.
